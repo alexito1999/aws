@@ -1,0 +1,83 @@
+
+chmod 400 "server-web.pem"
+ssh -i 
+
+
+
+crear servidor t2.micro
+conectar --> conectar
+
+mv  nombre/* ./  :    para sacar un archivo fuera
+
+
+puertos :
+localhost: 80
+https:     443
+ssh:       22
+
+***Cuando hagamos el build ----
+docker exece .it -u root <ip > bash
+chown root:jenkins /var/run /docker.sock
+
+echo "token del docker" > password.txt
+
+direccion: cd /var/jenkins_home/workspace/proyecto-web
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Clear') {
+            steps {
+                sh 'rm -rf *'
+            }
+        }
+        stage('Clonar repositorio') {
+            steps {
+                git 'https://github.com/alexito1999/Maria-proyecto.git'
+            }
+        }
+        stage('Construir imagen') {
+            steps {
+                sh "docker build -t zanaroio88/proyecto-web:1.0 ."
+            }
+        }
+    }
+}
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Clear') {
+            steps {
+                sh 'rm -rf Maria-proyecto' // Borra solo el contenido de la carpeta "Maria-proyecto"
+            }
+        }
+        stage('Clonar repositorio') {
+            steps {
+                sh 'git clone https://github.com/alexito1999/Maria-proyecto.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh "cd Maria-proyecto && docker build -t zanaorio88/proyecto-web:1.0-${BUILD_ID} ."
+            }
+        }
+        stage('Login') {
+            steps {
+                sh "docker login --username zanaorio88 --password-stdin < ~/password.txt"
+            }
+        }
+        stage('Push') {
+            steps {
+                sh "docker push zanaorio88/proyecto-web:1.0-${BUILD_ID}"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo yes | ssh -i "secretweb.pem" ec2-user@ec2-176-34-134-248.eu-west-1.compute.amazonaws.com'
+            }
+        }
+    }
+}
