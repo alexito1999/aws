@@ -1,0 +1,78 @@
+{
+  "productos": [
+    {
+      "nombre": "Espada medieval",
+      "precio": 100,
+      "categoria": "arma",
+      "descripcion": "Una espada medieval de acero forjado con una hoja de 60 cm de largo.",
+      "imagen": "../images/productos/espadamedi.webp"
+    },
+    {
+      "nombre": "Hacha de batalla",
+      "precio": 50,
+      "categoria": "arma",
+      "descripcion": "Un arma de mano con una hoja de hierro de 30 cm de largo y un mango de madera de 60 cm de largo. Se usaba para golpear y cortar en la batalla.",
+      "imagen": "../images/productos/hacha.jpeg"
+    },
+    {
+      "nombre": "Maza",
+      "precio": 75,
+      "categoria": "arma",
+      "descripcion": "Un arma de mano con una cabeza de hierro con pinchos y un mango de madera de 60 cm de largo. Se usaba para golpear y aplastar en la batalla.",
+      "imagen": "../images/productos/maza.jpeg"
+    },
+    {
+      "nombre": "Arco largo",
+      "precio": 100,
+      "categoria": "arma",
+      "descripcion": "Un arco de madera de 1,8 m de largo con una cuerda de tendón de animales. Se usaba para disparar flechas a larga distancia.",
+      "imagen": "../images/productos/arco largo.jpeg"
+    },
+    {
+      "nombre": "Ballesta",
+      "precio": 150,
+      "categoria": "arma",
+      "descripcion": "Un arma de mano con un arco de acero y una cuerda de tendón de animales. Se usaba para disparar pernos de hierro a larga distancia.",
+      "imagen": "../images/productos/ballesta.jpeg"
+    },
+    {
+      "nombre": "Casco medieval",
+      "precio": 50,
+      "categoria": "armadura",
+      "descripcion": "Un casco medieval de acero con una visera que protege la cara.",
+      "imagen": "../images/productos/casco.jpg"
+    },
+    {
+      "nombre": "Armadura medieval",
+      "precio": 200,
+      "categoria": "armadura",
+      "descripcion": "Una armadura medieval de acero que cubre todo el cuerpo.",
+      "imagen": "../images/productos/armadura.avif"
+    },
+    {
+      "nombre": "Lanza medieval",
+      "precio": 30,
+      "categoria": "arma",
+      "descripcion": "Una lanza medieval de madera con una punta de hierro.",
+      "imagen": "../images/productos/lanza.jpeg"
+    }
+
+  ],
+  "cardsPrincipales": [
+    {
+      "id": 1,
+      "titulo": "Ofertas del dia",
+      "imagen": "../images/descuento.png"
+    },
+    {
+      "id": 2,
+      "titulo": "Eventos",
+      "imagen": "../images/calendario.png"
+    },
+    {
+      "id": 3,
+      "titulo": "Favoritos",
+      "imagen": "../images/favorito.png"
+    }
+  ]
+}

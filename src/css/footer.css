@@ -1,0 +1,40 @@
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    height: 15rem;
+    background-color: darkgreen;
+    color: white;
+
+}
+footer h2{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.redes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.elementos-footer{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-bottom: auto;
+}
+.elementos-footer .box-icon{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+}
+
+.elementos-footer .box-icon .icon{
+    padding: 0 1rem;
+}

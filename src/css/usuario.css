@@ -1,0 +1,71 @@
+.registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/images/medievo.webp);
+    background-position: center;
+    padding: 4rem;
+}
+.formulario-registro{
+    width: 100%;
+    max-width:45rem ;
+    background-color: #212529;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+
+}
+.formulario-registro input {
+    width: 100%;
+    color: white;
+    background: transparent;
+    font-size: 2rem;
+    border: none;
+    
+}
+
+.formulario-registro h1{
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 6rem;
+    position: relative;
+}
+.formulario-registro h1::after{
+    content: "";
+    width: 3rem;
+    height: 0.5rem;
+    border-radius: 0.3rem;
+    background-color:#04BD7D ;
+    position: absolute;
+    bottom: -1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.campo-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #515966;    
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+.campo-input input::placeholder{
+    color: white;
+}
+.campo-input i{
+    color: #04BD7D ;
+    padding: 0 1rem;
+}
+.formulario-registro button{
+    background-color:#04BD7D ;
+    border-radius: 0.6rem;
+    padding: 1rem;
+    color: white;
+    border: none;
+    text-align: end;
+}
