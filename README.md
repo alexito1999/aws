@@ -53,6 +53,13 @@ pipeline {
                 sh "docker push zanaorio88/proyecto-web:1.0-${BUILD_ID}"
             }
         }
+        stage('Deploy') {
+            steps {
+                sh 'ssh -i "secret.pem" ubuntu@ec2-34-244-107-191.eu-west-1.compute.amazonaws.com'
+                sh 'cd Maria-proyecto && docker build -t proyecto-web:1.0-${BUILD_ID} . '
+                sh 'cd Maria-proyecto && docker run -d -p 8080:8080 proyecto-web:1.0-${BUILD_ID} '
+            }
+        }
     }
 }
 
@@ -75,4 +82,6 @@ En la cuarta etapa, procederemos a logearnos en el docker hub para ello tendremo
 5. Nuestro codigo leera el archivo que creamos previamente para poner la contraseña de nuestro token ya que el docker login necesita la contraseña de nuestro docker y el token sirve como ella.
 
 En la quinta etapa, procederemos con el push de la imagen al registry de docker con el comando que nos facilita docker hub y la etiqueta es la misma que pusimos en el build.
+
+En la sexta etapa, iremos al job donde tenemos nuestro trabajo y vamos a ejecutar un chmod 400 para mi calve en este caso se llama secret.pem de paso con un nano en la ubicacion de mi job creo ese archivo y le meto el contenido del archivo pem que aws me dio y luego el pipeline se puede ejecutar sin problemas. 
 
